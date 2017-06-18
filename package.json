@@ -1,0 +1,42 @@
+{
+  "name": "got-resume",
+  "version": "0.0.0",
+  "description": "Fetch via HTTP/HTTPS using got with automatic resume after network failures",
+  "main": "./lib/",
+  "author": {
+    "name": "Overlook Motel"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/overlookmotel/got-resume.git"
+  },
+  "bugs": {
+    "url": "https://github.com/overlookmotel/got-resume/issues"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "chai": "^4.0.2",
+    "coveralls": "^2.13.1",
+    "cross-env": "^5.0.1",
+    "istanbul": "^0.4.5",
+    "jshint": "^2.9.4",
+    "mocha": "^3.4.2"
+  },
+  "keywords": [
+  ],
+  "scripts": {
+    "test": "npm run jshint && npm run test-main",
+    "jshint": "jshint lib test",
+    "test-main": "mocha --check-leaks --colors -t 10000 -R spec \"test/**/*.test.js\"",
+    "cover": "npm run cover-main && rm -rf coverage",
+    "coveralls": "npm run cover-main && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage",
+    "cover-main": "cross-env COVERAGE=true istanbul cover _mocha --report lcovonly -- -t 10000 -R spec \"test/**/*.test.js\"",
+    "travis": "if [ $COVERAGE ]; then npm run coveralls; else npm test; fi"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "readmeFilename": "README.md",
+  "license": "MIT"
+}
