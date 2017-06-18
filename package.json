@@ -24,6 +24,15 @@
     "mocha": "^3.4.2"
   },
   "keywords": [
+	"download",
+	"resume",
+  	"stream",
+  	"http",
+  	"https",
+  	"got",
+  	"url",
+  	"get",
+  	"fetch"
   ],
   "scripts": {
     "test": "npm run jshint && npm run test-main",
