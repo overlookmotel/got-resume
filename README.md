@@ -1,5 +1,7 @@
 # got-resume.js
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/overlookmotel/got-resume.svg)](https://greenkeeper.io/)
+
 # Fetch via HTTP/HTTPS using got with automatic resume after network failures
 
 ## Current status
