@@ -20,8 +20,10 @@ Designed for downloading large files. If transfer fails part-way through, will r
 
 ```js
 const stream = gotResume('http://google.com/');
-const writeStream = fs.createWriteStream('foo.html');
-stream.pipe(writeStream);
+stream.pipe( fs.createWriteStream('foo.html') );
+
+stream.on('error', err => console.log('Failed!'));
+stream.on('end', () => console.log('Finished!'));
 ```
 
 ### Options
@@ -72,9 +74,9 @@ function backoff(attempt) {
 
 Length of response expected in bytes. If undefined, `length` will be determined from HTTP `content-length` header.
 
-If server does not provide `content-length` header, and `options.length` is not set, transfer will be considered complete when first successful request complete.
+If server does not provide `content-length` header, and `options.length` is not set, transfer will be considered complete when first successful request completes.
 
-If `options.length` is set, only that number of bytes will be fetched.
+If `options.length` is set, only that number of bytes will be fetched (i.e. file will be truncated).
 
 #### offset
 
@@ -88,7 +90,7 @@ e.g. `{offset: 5, length: 10}` will stream 5 bytes.
 
 An async function that is run before each chunk request. Must return a `Promise`. Request will commence once promise resolves.
 
-Useful where some authentication requires being set up before transfer HTTP request, or where resource has a different URL each time (e.g. Amazon EC2).
+Useful where some authentication requires being set up before the transfer HTTP request, or where resource has a different URL each time (e.g. some file transfer services).
 
 `pre` function is called with `Transfer` object (see below). To set URL for next chunk, `pre` should set `transfer.url`. To alter `got` options, should set `transfer.gotOptions`.
 
@@ -101,7 +103,7 @@ function pre(transfer) {
 
 #### log
 
-Function to receive logging information e.g. HTTP responses
+Function to receive logging information e.g. HTTP responses.
 
 ```js
 const stream = gotResume( 'http://google.com/', {log: console.log} );
