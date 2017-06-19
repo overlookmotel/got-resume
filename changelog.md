@@ -18,7 +18,7 @@
 * Cancellation
 * `PreError` class for errors in `pre` function
 
-## Next
+## 1.1.1
 
 * Fix: Correctly handle server not returning `content-length` header
 * Comments typo
