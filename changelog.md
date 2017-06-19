@@ -21,3 +21,4 @@
 ## Next
 
 * Fix: Correctly handle server not returning `content-length` header
+* Comments typo
