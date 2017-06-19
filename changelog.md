@@ -17,3 +17,7 @@
 
 * Cancellation
 * `PreError` class for errors in `pre` function
+
+## Next
+
+* Fix: Correctly handle server not returning `content-length` header
