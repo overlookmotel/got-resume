@@ -16,3 +16,4 @@
 ## Next
 
 * Cancellation
+* `PreError` class for errors in `pre` function
