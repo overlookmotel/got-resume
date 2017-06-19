@@ -130,6 +130,10 @@ Emitted when transfer completes.
 
 NB Is also emitted after `error` event if transfer fails.
 
+#### progress
+
+Emitted when data received. Emitted with progress object of form `{transferred: 100, total: 3000}`.
+
 #### request
 
 Emitted with HTTP request object when first HTTP request made to server.

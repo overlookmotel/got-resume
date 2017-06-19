@@ -22,3 +22,7 @@
 
 * Fix: Correctly handle server not returning `content-length` header
 * Comments typo
+
+## Next
+
+* `progress` event
