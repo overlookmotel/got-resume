@@ -8,7 +8,7 @@
 
 * README update
 
-## Next
+## 1.0.2
 
 * Fix: Do not stream data after protocol error (closes #3)
 * README Greenkeeper.io badge
