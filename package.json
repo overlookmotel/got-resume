@@ -14,6 +14,7 @@
     "url": "https://github.com/overlookmotel/got-resume/issues"
   },
   "dependencies": {
+    "got": "^7.0.0"
   },
   "devDependencies": {
     "chai": "^4.0.2",
@@ -44,7 +45,7 @@
     "travis": "if [ $COVERAGE ]; then npm run coveralls; else npm test; fi"
   },
   "engines": {
-    "node": ">=4"
+    "node": ">=6"
   },
   "readmeFilename": "README.md",
   "license": "MIT"
