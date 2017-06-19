@@ -13,7 +13,7 @@
 * Fix: Do not stream data after protocol error (closes #3)
 * README Greenkeeper.io badge
 
-## Next
+## 1.1.0
 
 * Cancellation
 * `PreError` class for errors in `pre` function
