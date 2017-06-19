@@ -147,6 +147,14 @@ const stream = gotResume('http://google.com/');
 stream.on( 'response', res => console.log('Length: ', stream.transfer.length) );
 ```
 
+### Cancellation
+
+The stream returned has an additional method `.cancel()`. Calling `.cancel()` will abort the transfer and cause the stream to emit an `error` event with a `gotResume.CancelError`.
+
+If the transfer is complete before `.cancel()` is called, no `error` event will be emitted.
+
+If `options.pre` function is supplied and `.cancel()` is called while `options.pre` is running, `.cancel()` method on the promise returned by `options.pre` will be called if it exists. Otherwise the transfer will abort once the promise resolves.
+
 ### Transfer object
 
 A transfer in progress is represented internally as an instance of `gotResume.Transfer` class.

@@ -12,3 +12,7 @@
 
 * Fix: Do not stream data after protocol error (closes #3)
 * README Greenkeeper.io badge
+
+## Next
+
+* Cancellation
