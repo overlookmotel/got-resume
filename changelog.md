@@ -23,7 +23,7 @@
 * Fix: Correctly handle server not returning `content-length` header
 * Comments typo
 
-## Next
+## 1.2.0
 
 * Fix: Do not ignore `options.length`
 * Fix: Handle case when got stream emits end before transform stream processes last data
