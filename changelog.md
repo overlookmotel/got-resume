@@ -25,5 +25,6 @@
 
 ## Next
 
+* Fix: Handle case when got stream emits end before transform stream processes last data
 * Fix: Stream ends normally after error event if transfer complete
 * `progress` event
