@@ -32,3 +32,4 @@
 * `progress` event
 * Log request headers
 * Log response URL
+* Log pre function calls
