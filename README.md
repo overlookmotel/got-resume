@@ -175,7 +175,7 @@ Transfer object is stored as `stream.transfer` and also passed to `options.pre` 
 
 Use `npm test` to run the tests. Use `npm run cover` to check coverage.
 
-No tests yet but seems to work fine!
+Few tests so far but seems to work fine!
 
 ## Changelog
 
