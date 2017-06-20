@@ -33,3 +33,4 @@
 * Log request headers
 * Log response URL
 * Log pre function calls
+* Set got encoding option only once (small optimization)
