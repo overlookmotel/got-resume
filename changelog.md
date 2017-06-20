@@ -27,4 +27,5 @@
 
 * Fix: Handle case when got stream emits end before transform stream processes last data
 * Fix: Stream ends normally after error event if transfer complete
+* Fix: Do not stream data if server error e.g. 404
 * `progress` event
