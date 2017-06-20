@@ -87,6 +87,12 @@ NB Number of bytes to be streamed is `length - offset`. i.e. `length` is actuall
 
 e.g. `{offset: 5, length: 10}` will stream 5 bytes.
 
+#### needLength
+
+Set to true if you require the length of the transfer to be retrieved at start of the transfer. Default: false
+
+Explanation: By default got will use transfer encoding (e.g. gzip). This makes the `content-length` HTTP header unreliable. Setting `options.needLength` disables encoding so length should be retrieved accurately (if server provides it).
+
 #### pre
 
 An async function that is run before each chunk request. Must return a `Promise`. Request will commence once promise resolves.
