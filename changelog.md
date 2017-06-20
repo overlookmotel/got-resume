@@ -30,3 +30,4 @@
 * Fix: Stream ends normally after error event if transfer complete
 * Fix: Do not stream data if server error e.g. 404
 * `progress` event
+* Log request headers
