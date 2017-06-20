@@ -31,3 +31,4 @@
 * Fix: Do not stream data if server error e.g. 404
 * `progress` event
 * Log request headers
+* Log response URL
