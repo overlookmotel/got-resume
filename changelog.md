@@ -34,3 +34,4 @@
 * Log response URL
 * Log pre function calls
 * Set got encoding option only once (small optimization)
+* Code tidy
