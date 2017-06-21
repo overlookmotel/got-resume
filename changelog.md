@@ -38,3 +38,7 @@
 * Set got encoding option only once (small optimization)
 * Code tidy
 * Tests
+
+## Next
+
+* `toFile` method

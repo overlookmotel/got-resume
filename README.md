@@ -27,6 +27,18 @@ stream.on('error', err => console.log('Failed!'));
 stream.on('end', () => console.log('Finished!'));
 ```
 
+### gotResume.toFile( path, [url], [options] ) -> Promise
+
+```js
+gotResume.toFile('google.html', 'http://google.com/')
+	.then(() => console.log('Finished!'))
+	.catch(err => console.log('Failed!'));
+```
+
+Promise only resolves (or rejects in case of an error) once transfer is ended and output file is closed.
+
+Promise is a Bluebird v2 promise. Bluebird v2 is used due to its cancellation feature.
+
 ### Options
 
 #### url
@@ -124,6 +136,18 @@ Options to pass to `got`. See [got documentation](https://www.npmjs.com/package/
 const stream = gotResume( 'http://google.com/', {got: {method: 'POST'} } );
 ```
 
+#### Promise
+
+`.toFile()` method only. Promise implementation to use for promises returned.
+
+#### onProgress
+
+`.toFile()` method only. Handler for `progress` event (see above).
+
+#### onResponse
+
+`.toFile()` method only. Handler for `response` event (see above).
+
 ### Events
 
 #### error
@@ -159,11 +183,13 @@ stream.on( 'response', res => console.log('Length: ', stream.transfer.length) );
 
 ### Cancellation
 
-The stream returned has an additional method `.cancel()`. Calling `.cancel()` will abort the transfer and cause the stream to emit an `error` event with a `gotResume.CancelError`.
+The stream returned by `gotStream()` has an additional method `.cancel()`. Calling `.cancel()` will abort the transfer and cause the stream to emit an `error` event with a `gotResume.CancelError`.
 
 If the transfer is complete before `.cancel()` is called, no `error` event will be emitted.
 
 If `options.pre` function is supplied and `.cancel()` is called while `options.pre` is running, `.cancel()` method on the promise returned by `options.pre` will be called if it exists. Otherwise the transfer will abort once the promise resolves.
+
+The promise returned by `.toFile()` also has a `.cancel()` method. Calling cancel will cause the promise to be rejected with a Bluebird CancellationError.
 
 ### Transfer object
 
