@@ -42,4 +42,5 @@
 ## Next
 
 * `toFile` method
+* Fix: Malformed range header reports range
 * Code comments
