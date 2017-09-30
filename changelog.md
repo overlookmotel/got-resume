@@ -43,4 +43,5 @@
 
 * `toFile` method
 * Fix: Malformed range header reports range
+* Code tidy: Delete `waitTimer` when timer cleared
 * Code comments
