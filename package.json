@@ -23,7 +23,8 @@
     "cross-env": "^5.0.1",
     "istanbul": "^0.4.5",
     "jshint": "^2.9.4",
-    "mocha": "^3.4.2"
+    "mocha": "^3.4.2",
+	"fs-extra-promise": "^1.0.1"
   },
   "keywords": [
 	"download",
