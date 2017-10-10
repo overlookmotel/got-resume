@@ -39,7 +39,7 @@
 * Code tidy
 * Tests
 
-## Next
+## 1.3.0
 
 * `toFile` method
 * Fix: Malformed range header reports range
