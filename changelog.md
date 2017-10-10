@@ -46,3 +46,4 @@
 * Code tidy: Delete `waitTimer` when timer cleared
 * Code comments
 * Update `got` dependency
+* Update dev dependencies
