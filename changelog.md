@@ -48,7 +48,7 @@
 * Update `got` dependency
 * Update dev dependencies
 
-## Next
+## 1.3.1
 
 * Fix: Do not require `accept-ranges` header
 * Update dev dependencies
