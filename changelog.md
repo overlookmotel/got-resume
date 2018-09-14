@@ -47,3 +47,7 @@
 * Code comments
 * Update `got` dependency
 * Update dev dependencies
+
+## Next
+
+* Fix: Do not require `accept-ranges` header
