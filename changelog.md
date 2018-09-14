@@ -52,3 +52,4 @@
 
 * Fix: Do not require `accept-ranges` header
 * Update dev dependencies
+* Travis CI run tests on Node v10
