@@ -51,3 +51,4 @@
 ## Next
 
 * Fix: Do not require `accept-ranges` header
+* Update dev dependencies
