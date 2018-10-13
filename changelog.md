@@ -57,3 +57,4 @@
 ## Next
 
 * Log response body when response errors
+* Update dev dependencies
