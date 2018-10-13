@@ -61,4 +61,5 @@
 
 ## Next
 
+* Refactor logging
 * Remove unnecessary code
