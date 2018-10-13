@@ -54,7 +54,7 @@
 * Update dev dependencies
 * Travis CI run tests on Node v10
 
-## Next
+## 1.3.2
 
 * Log response body when response errors
 * Update dev dependencies
