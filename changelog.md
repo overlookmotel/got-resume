@@ -59,7 +59,7 @@
 * Log response body when response errors
 * Update dev dependencies
 
-## Next
+## 1.4.0
 
 * `transform` option
 * Error message for wrong range more verbose
