@@ -64,4 +64,5 @@
 * Error message for wrong range more verbose
 * Refactor logging
 * Remove unnecessary code
+* JSDoc comment document all options
 * Tests small refactor
