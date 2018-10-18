@@ -14,8 +14,8 @@
     "url": "https://github.com/overlookmotel/got-resume/issues"
   },
   "dependencies": {
-    "got": "^7.1.0",
     "bluebird": "^2.10.2",
+    "got": "^7.1.0",
     "pump": "^3.0.0"
   },
   "devDependencies": {
@@ -25,18 +25,18 @@
     "istanbul": "^0.4.5",
     "jshint": "^2.9.6",
     "mocha": "^5.2.0",
-	"fs-extra-promise": "^1.0.1"
+    "fs-extra-promise": "^1.0.1"
   },
   "keywords": [
-	"download",
-	"resume",
-  	"stream",
-  	"http",
-  	"https",
-  	"got",
-  	"url",
-  	"get",
-  	"fetch"
+    "download",
+    "resume",
+    "stream",
+    "http",
+    "https",
+    "got",
+    "url",
+    "get",
+    "fetch"
   ],
   "scripts": {
     "test": "npm run jshint && npm run test-main",

@@ -68,3 +68,4 @@
 * Remove unnecessary code
 * JSDoc comment document all options
 * Tests small refactor
+* `package.json` formatting
