@@ -27,7 +27,7 @@ chai.config.includeStack = true;
 describe('Tests', () => {
 	describe('Streams', () => {
 		it('empty file', done => {
-			const stream = gotResume(URL_PREFIX + 'empty.txt');
+			const stream = gotResume(`${URL_PREFIX}empty.txt`);
 
 			let count = 0, err;
 			stream.on('data', () => count++);
@@ -43,7 +43,7 @@ describe('Tests', () => {
 		});
 
 		it('short file', done => {
-			const stream = gotResume(URL_PREFIX + 'short.txt');
+			const stream = gotResume(`${URL_PREFIX}short.txt`);
 
 			let out = '', err;
 			stream.on('data', (data) => {
@@ -74,7 +74,7 @@ describe('Tests', () => {
 
 		it('empty file', () => {
 			const path = pathJoin(TEMP_DIR, 'empty.txt');
-			return gotResume.toFile(path, URL_PREFIX + 'empty.txt')
+			return gotResume.toFile(path, `${URL_PREFIX}empty.txt`)
 			.then(() => {
 				// Check file is empty
 				return fs.readFileAsync(path, 'utf8');
@@ -86,7 +86,7 @@ describe('Tests', () => {
 
 		it('short file', () => {
 			const path = pathJoin(TEMP_DIR, 'short.txt');
-			return gotResume.toFile(path, URL_PREFIX + 'short.txt')
+			return gotResume.toFile(path, `${URL_PREFIX}short.txt`)
 			.then(() => {
 				// Check file is empty
 				return fs.readFileAsync(path, 'utf8');
