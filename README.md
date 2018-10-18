@@ -31,8 +31,8 @@ stream.on('end', () => console.log('Finished!'));
 
 ```js
 gotResume.toFile('google.html', 'http://google.com/')
-	.then(() => console.log('Finished!'))
-	.catch(err => console.log('Failed!'));
+  .then(() => console.log('Finished!'))
+  .catch(err => console.log('Failed!'));
 ```
 
 Promise only resolves (or rejects in case of an error) once transfer is ended and output file is closed.
@@ -79,7 +79,7 @@ If not provided, default backoff function starts with 1000ms and doubles each ti
 
 ```js
 function backoff(attempt) {
-	return Math.pow(2, attempt - 1) * 1000;
+  return Math.pow(2, attempt - 1) * 1000;
 };
 ```
 
@@ -115,9 +115,21 @@ Useful where some authentication requires being set up before the transfer HTTP 
 
 ```js
 function pre(transfer) {
-	transfer.gotOptions.headers['user-agent'] = 'Stealth 2.0';
-	return Promise.resolve();
+  transfer.gotOptions.headers['user-agent'] = 'Stealth 2.0';
+  return Promise.resolve();
 }
+```
+
+#### transform
+
+Provide a transform stream through which download stream is passed before being returned.
+
+```js
+await gotResume.toFile(
+  'google.html.gz',
+  'http://google.com/',
+  {transform: zlib.createGzip()}
+);
 ```
 
 #### log

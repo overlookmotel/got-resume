@@ -61,6 +61,7 @@
 
 ## Next
 
+* `transform` option
 * Error message for wrong range more verbose
 * Define all keys on `options`
 * Refactor logging
