@@ -62,6 +62,7 @@
 ## Next
 
 * Error message for wrong range more verbose
+* Define all keys on `options`
 * Refactor logging
 * Remove unnecessary code
 * JSDoc comment document all options
