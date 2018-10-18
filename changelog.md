@@ -61,5 +61,6 @@
 
 ## Next
 
+* Error message for wrong range more verbose
 * Refactor logging
 * Remove unnecessary code
