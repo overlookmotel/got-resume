@@ -70,6 +70,6 @@
 * Tests small refactor
 * `package.json` formatting
 
-## Next
+## 1.4.1
 
 * Fix: Add `cancel` method to output stream if `transform` option used
