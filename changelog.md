@@ -73,3 +73,7 @@
 ## 1.4.1
 
 * Fix: Add `cancel` method to output stream if `transform` option used
+
+## Next
+
+* Fix: Propagate stream events to output stream if `transform` option used
