@@ -1,6 +1,6 @@
 {
   "name": "got-resume",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Fetch via HTTP/HTTPS using got with automatic resume after network failures",
   "main": "./lib/",
   "author": {
