@@ -69,3 +69,7 @@
 * JSDoc comment document all options
 * Tests small refactor
 * `package.json` formatting
+
+## Next
+
+* Fix: Add `cancel` method to output stream if `transform` option used
