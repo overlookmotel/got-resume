@@ -78,6 +78,6 @@
 
 * Fix: Propagate stream events to output stream if `transform` option used
 
-## Next
+## 1.4.3
 
 * Fix: Propagate all stream events to output stream if `transform` option used
