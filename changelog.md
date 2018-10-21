@@ -85,3 +85,7 @@
 ## 1.4.4
 
 * Fix: Propagate error event to output stream if `transform` option used
+
+## Next
+
+* Remove `transform` stream from log messages
