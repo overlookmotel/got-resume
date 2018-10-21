@@ -86,6 +86,6 @@
 
 * Fix: Propagate error event to output stream if `transform` option used
 
-## Next
+## 1.4.5
 
 * Remove `transform` stream from log messages
