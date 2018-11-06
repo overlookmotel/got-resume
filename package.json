@@ -14,7 +14,7 @@
     "url": "https://github.com/overlookmotel/got-resume/issues"
   },
   "dependencies": {
-    "bluebird": "^2.10.2",
+    "bluebird": "^3.5.3",
     "got": "^7.1.0",
     "pump": "^3.0.0"
   },
