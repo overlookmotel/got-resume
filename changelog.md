@@ -89,3 +89,7 @@
 ## 1.4.5
 
 * Remove `transform` stream from log messages
+
+## 1.4.6
+
+* Add `append` option
