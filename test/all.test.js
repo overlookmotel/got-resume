@@ -107,5 +107,21 @@ describe('Tests', () => {
 				expect(txt).to.equal('ABCDEFGHIJKLMNOPQRSTUVWXYZ');
 			});
 		});
+
+		it('append short file partial local', () => {
+			const path = pathJoin(TEMP_DIR, 'short_append_partial.txt');
+			// write patial content
+			fs.writeFileSync(path, 'ABCDEFGHIJKLM');
+
+			return gotResume.toFile(path, `${URL_PREFIX}short.txt`, {append: true})
+			.then(() => {
+				// Check file is empty
+				return fs.readFileAsync(path, 'utf8');
+			})
+			.then(txt => {
+				expect(txt).to.equal('ABCDEFGHIJKLMNOPQRSTUVWXYZ');
+			});
+		});
+
 	});
 });
