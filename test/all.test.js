@@ -95,5 +95,17 @@ describe('Tests', () => {
 				expect(txt).to.equal('ABCDEFGHIJKLMNOPQRSTUVWXYZ');
 			});
 		});
+
+		it('append short file no local', () => {
+			const path = pathJoin(TEMP_DIR, 'short_append.txt');
+			return gotResume.toFile(path, `${URL_PREFIX}short.txt`, {append: true})
+			.then(() => {
+				// Check file is empty
+				return fs.readFileAsync(path, 'utf8');
+			})
+			.then(txt => {
+				expect(txt).to.equal('ABCDEFGHIJKLMNOPQRSTUVWXYZ');
+			});
+		});
 	});
 });
