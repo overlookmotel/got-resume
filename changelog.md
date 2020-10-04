@@ -90,7 +90,7 @@
 
 * Remove `transform` stream from log messages
 
-## Next
+## 1.4.6
 
 * Fix: Avoid stalling on errors which don't emit end event
 * Fix: Reset backoff after attempt which returned bytes
