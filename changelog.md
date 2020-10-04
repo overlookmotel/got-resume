@@ -89,3 +89,7 @@
 ## 1.4.5
 
 * Remove `transform` stream from log messages
+
+## Next
+
+* Fix: Avoid stalling on errors which don't emit end event
