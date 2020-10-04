@@ -94,3 +94,4 @@
 
 * Fix: Avoid stalling on errors which don't emit end event
 * Fix: Reset backoff after attempt which returned bytes
+* Docs: Update license year
