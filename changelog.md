@@ -96,3 +96,4 @@
 * Fix: Reset backoff after attempt which returned bytes
 * Docs: Update license year
 * Dev: Add `package-lock.json` lock file
+* Dev: Editor config 2 spaces for tabs
