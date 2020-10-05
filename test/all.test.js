@@ -10,7 +10,7 @@ const chai = require('chai'),
 	{expect} = chai,
 	pathJoin = require('path').join,
 	fs = require('fs-extra-promise'),
-	gotResume = require('../lib');
+	gotResume = require('../index.js');
 
 // Constants
 const URL_PREFIX = 'https://raw.githubusercontent.com/overlookmotel/got-resume/master/test/files/';

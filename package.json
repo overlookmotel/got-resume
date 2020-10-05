@@ -2,7 +2,13 @@
   "name": "got-resume",
   "version": "1.4.6",
   "description": "Fetch via HTTP/HTTPS using got with automatic resume after network failures",
-  "main": "./lib/",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js"
+  },
+  "files": [
+    "lib/**/*.js"
+  ],
   "author": {
     "name": "Overlook Motel"
   },
