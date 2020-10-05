@@ -6,85 +6,75 @@
 'use strict';
 
 // Modules
-const chai = require('chai'),
-	{expect} = chai,
-	pathJoin = require('path').join,
+const pathJoin = require('path').join,
 	fs = require('fs-extra-promise'),
-	gotResume = require('../index.js');
+	gotResume = require('got-resume');
 
 // Constants
 const URL_PREFIX = 'https://raw.githubusercontent.com/overlookmotel/got-resume/master/test/files/';
 const TEMP_DIR = pathJoin(__dirname, 'temp');
 
 // Init
-chai.config.includeStack = true;
+require('./support/index.js');
 
 // Tests
 
-/* global describe, it, beforeEach, afterEach */
+describe('Streams', () => {
+	it('empty file', async () => {
+		const stream = gotResume(`${URL_PREFIX}empty.txt`);
 
-describe('Tests', () => {
-	describe('Streams', () => {
-		it('empty file', (done) => {
-			const stream = gotResume(`${URL_PREFIX}empty.txt`);
-
-			let count = 0,
-				err;
+		await new Promise((resolve, reject) => {
+			let count = 0;
 			stream.on('data', () => count++);
 			stream.on('end', () => {
-				if (err) return;
-				if (count > 0) {
-					done(new Error('No data should have been received'));
-				} else {
-					done();
+				try {
+					expect(count).toBe(0);
+					resolve();
+				} catch (e) {
+					reject(e);
 				}
 			});
-			stream.on('error', (_err) => {
-				err = _err;
-				done(err);
-			});
+			stream.on('error', reject);
 		});
+	});
 
-		it('short file', (done) => {
-			const stream = gotResume(`${URL_PREFIX}short.txt`);
+	it('short file', async () => {
+		const stream = gotResume(`${URL_PREFIX}short.txt`);
 
-			let out = '',
-				err;
+		await new Promise((resolve, reject) => {
+			let out = '';
 			stream.on('data', (data) => {
 				out += data.toString();
 			});
 			stream.on('end', () => {
-				if (err) return;
-				if (out !== 'ABCDEFGHIJKLMNOPQRSTUVWXYZ') {
-					done(new Error('Bad data received'));
-				} else {
-					done();
+				try {
+					expect(out).toBe('ABCDEFGHIJKLMNOPQRSTUVWXYZ');
+					resolve();
+				} catch (e) {
+					reject(e);
 				}
 			});
-			stream.on('error', (_err) => {
-				err = _err;
-				done(err);
-			});
+			stream.on('error', reject);
 		});
 	});
+});
 
-	describe('toFile method saves', () => {
-		// Create/remove temp dir before/after
-		beforeEach(() => fs.mkdirAsync(TEMP_DIR));
-		afterEach(() => fs.removeAsync(TEMP_DIR));
+describe('toFile method saves', () => {
+	// Create/remove temp dir before/after
+	beforeEach(() => fs.mkdirAsync(TEMP_DIR));
+	afterEach(() => fs.removeAsync(TEMP_DIR));
 
-		it('empty file', async () => {
-			const path = pathJoin(TEMP_DIR, 'empty.txt');
-			await gotResume.toFile(path, `${URL_PREFIX}empty.txt`);
-			const txt = await fs.readFileAsync(path, 'utf8');
-			expect(txt).to.equal('');
-		});
+	it('empty file', async () => {
+		const path = pathJoin(TEMP_DIR, 'empty.txt');
+		await gotResume.toFile(path, `${URL_PREFIX}empty.txt`);
+		const txt = await fs.readFileAsync(path, 'utf8');
+		expect(txt).toBe('');
+	});
 
-		it('short file', async () => {
-			const path = pathJoin(TEMP_DIR, 'short.txt');
-			await gotResume.toFile(path, `${URL_PREFIX}short.txt`);
-			const txt = await fs.readFileAsync(path, 'utf8');
-			expect(txt).to.equal('ABCDEFGHIJKLMNOPQRSTUVWXYZ');
-		});
+	it('short file', async () => {
+		const path = pathJoin(TEMP_DIR, 'short.txt');
+		await gotResume.toFile(path, `${URL_PREFIX}short.txt`);
+		const txt = await fs.readFileAsync(path, 'utf8');
+		expect(txt).toBe('ABCDEFGHIJKLMNOPQRSTUVWXYZ');
 	});
 });
