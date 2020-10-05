@@ -97,3 +97,18 @@
 * Docs: Update license year
 * Dev: Add `package-lock.json` lock file
 * Dev: Editor config 2 spaces for tabs
+
+## 2.0.0
+
+* `timeout` option [major]
+* Drop support for Node v6 + v8 [major]
+* Idle timeout [feat]
+* Code style [refactor]
+* Entry point file [refactor]
+* Line spacing [nocode]
+* Tests: Replace `fs-extra-promise` with `fs-extra`
+* Dev: Swap ESLint for JSHint
+* Dev: Swap Jest for Mocha+Chai
+* Docs: Versioning policy
+* Docs: Remove Greenkeeper badge
+* Docs: Link to Travis CI with HTTPS
