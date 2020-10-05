@@ -112,3 +112,9 @@
 * Docs: Versioning policy
 * Docs: Remove Greenkeeper badge
 * Docs: Link to Travis CI with HTTPS
+
+## 2.0.1
+
+* Clear idle timeout on error [fix]
+* Do not pass idle timeout to `got` [fix]
+* Log idle timeouts [improve]
