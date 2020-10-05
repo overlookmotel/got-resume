@@ -118,3 +118,13 @@
 * Clear idle timeout on error [fix]
 * Do not pass idle timeout to `got` [fix]
 * Log idle timeouts [improve]
+
+## 2.0.2
+
+* Deps: Update `got` dependency
+* Fix idle timeout [fix]
+* Calculate backoff correctly [fix]
+* Only fire `request` event once [fix]
+* Don't use deprecated `req._headers` [fix]
+* Avoid deleting object properties [perf]
+* Tests: Split into multiple files [refactor]
