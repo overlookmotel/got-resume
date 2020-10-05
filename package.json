@@ -19,13 +19,19 @@
     "pump": "^3.0.0"
   },
   "devDependencies": {
+    "@overlookmotel/eslint-config": "^7.2.1",
+    "@overlookmotel/eslint-config-node": "^2.1.2",
     "chai": "^4.2.0",
     "coveralls": "^3.0.2",
     "cross-env": "^5.2.0",
+    "eslint": "^7.10.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "fs-extra-promise": "^1.0.1",
     "istanbul": "^0.4.5",
-    "jshint": "^2.9.6",
-    "mocha": "^5.2.0",
-    "fs-extra-promise": "^1.0.1"
+    "mocha": "^5.2.0"
   },
   "keywords": [
     "download",
@@ -39,8 +45,9 @@
     "fetch"
   ],
   "scripts": {
-    "test": "npm run jshint && npm run test-main",
-    "jshint": "jshint lib test",
+    "test": "npm run lint && npm run test-main",
+    "lint": "eslint .",
+    "lint-fix": "eslint . --fix",
     "test-main": "mocha --check-leaks --colors -t 10000 -R spec \"test/**/*.test.js\"",
     "cover": "npm run cover-main && rm -rf coverage",
     "coveralls": "npm run cover-main && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage",
