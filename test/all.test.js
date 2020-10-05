@@ -7,7 +7,7 @@
 
 // Modules
 const pathJoin = require('path').join,
-	fs = require('fs-extra-promise'),
+	{readFile, mkdir, remove} = require('fs-extra'),
 	gotResume = require('got-resume');
 
 // Constants
@@ -61,20 +61,20 @@ describe('Streams', () => {
 
 describe('toFile method saves', () => {
 	// Create/remove temp dir before/after
-	beforeEach(() => fs.mkdirAsync(TEMP_DIR));
-	afterEach(() => fs.removeAsync(TEMP_DIR));
+	beforeEach(() => mkdir(TEMP_DIR));
+	afterEach(() => remove(TEMP_DIR));
 
 	it('empty file', async () => {
 		const path = pathJoin(TEMP_DIR, 'empty.txt');
 		await gotResume.toFile(path, `${URL_PREFIX}empty.txt`);
-		const txt = await fs.readFileAsync(path, 'utf8');
+		const txt = await readFile(path, 'utf8');
 		expect(txt).toBe('');
 	});
 
 	it('short file', async () => {
 		const path = pathJoin(TEMP_DIR, 'short.txt');
 		await gotResume.toFile(path, `${URL_PREFIX}short.txt`);
-		const txt = await fs.readFileAsync(path, 'utf8');
+		const txt = await readFile(path, 'utf8');
 		expect(txt).toBe('ABCDEFGHIJKLMNOPQRSTUVWXYZ');
 	});
 });
