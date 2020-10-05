@@ -106,7 +106,7 @@ Explanation: By default got will use transfer encoding (e.g. gzip). This makes t
 
 #### timeout
 
-Set timeout in milliseconds. Default is 5000 (5 seconds).
+Timeout in milliseconds. Default is 5000 (5 seconds).
 
 Timeout is the timeout for a chunk, not the whole tranfer. After a timeout, the transfer will retry until max attempts are exhausted.
 
@@ -118,9 +118,12 @@ To disable timeouts, set to `null`.
 timeout: {
   connect: 1000,
   socket: 1000,
-  request: 10000
+  request: 1000,
+  idle: 10000
 }
 ```
+
+`connect`, `socket` and `request` are passed to [got](https://www.npmjs.com/package/got). `idle` is time to wait before aborting chunk if transfer stalls (no data received in specified time).
 
 #### pre
 
