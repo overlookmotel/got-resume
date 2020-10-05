@@ -105,6 +105,24 @@ Set to true if you require the length of the transfer to be retrieved at start o
 
 Explanation: By default got will use transfer encoding (e.g. gzip). This makes the `content-length` HTTP header unreliable. Setting `options.needLength` disables encoding so length should be retrieved accurately (if server provides it).
 
+#### timeout
+
+Set timeout in milliseconds. Default is 5000 (5 seconds).
+
+Timeout is the timeout for a chunk, not the whole tranfer. After a timeout, the transfer will retry until max attempts are exhausted.
+
+To disable timeouts, set to `null`.
+
+`timeout` option can also be an object specifying timeouts for different parts of the request cycle individually:
+
+```js
+timeout: {
+  connect: 1000,
+  socket: 1000,
+  request: 10000
+}
+```
+
 #### pre
 
 An async function that is run before each chunk request. Must return a `Promise`. Request will commence once promise resolves.
