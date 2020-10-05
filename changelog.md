@@ -128,3 +128,8 @@
 * Don't use deprecated `req._headers` [fix]
 * Avoid deleting object properties [perf]
 * Tests: Split into multiple files [refactor]
+
+## 2.0.3
+
+* Prevent default timeout interrupting actively downloading chunks [fix]
+* Shorten var reference [refactor]
