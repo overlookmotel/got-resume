@@ -5,7 +5,7 @@
 ## Current status
 
 [![NPM version](https://img.shields.io/npm/v/got-resume.svg)](https://www.npmjs.com/package/got-resume)
-[![Build Status](https://img.shields.io/travis/overlookmotel/got-resume/master.svg)](https://travis-ci.org/overlookmotel/got-resume)
+[![Build Status](https://img.shields.io/github/workflow/status/overlookmotel/got-resume/Test.svg)](https://github.com/overlookmotel/got-resume/actions)
 [![Dependency Status](https://img.shields.io/david/overlookmotel/got-resume.svg)](https://david-dm.org/overlookmotel/got-resume)
 [![Dev dependency Status](https://img.shields.io/david/dev/overlookmotel/got-resume.svg)](https://david-dm.org/overlookmotel/got-resume)
 [![Coverage Status](https://img.shields.io/coveralls/overlookmotel/got-resume/master.svg)](https://coveralls.io/r/overlookmotel/got-resume)
