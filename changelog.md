@@ -1,27 +1,99 @@
 # Changelog
 
-## 1.0.0
+## 2.0.3
 
-* Initial release
+* Prevent default timeout interrupting actively downloading chunks [fix]
+* Shorten var reference [refactor]
 
-## 1.0.1
+## 2.0.2
 
-* README update
+* Deps: Update `got` dependency
+* Fix idle timeout [fix]
+* Calculate backoff correctly [fix]
+* Only fire `request` event once [fix]
+* Don't use deprecated `req._headers` [fix]
+* Avoid deleting object properties [perf]
+* Tests: Split into multiple files [refactor]
 
-## 1.0.2
+## 2.0.1
 
-* Fix: Do not stream data after protocol error (closes #3)
-* README Greenkeeper.io badge
+* Clear idle timeout on error [fix]
+* Do not pass idle timeout to `got` [fix]
+* Log idle timeouts [improve]
 
-## 1.1.0
+## 2.0.0
 
-* Cancellation
-* `PreError` class for errors in `pre` function
+* `timeout` option [major]
+* Drop support for Node v6 + v8 [major]
+* Idle timeout [feat]
+* Code style [refactor]
+* Entry point file [refactor]
+* Line spacing [nocode]
+* Tests: Replace `fs-extra-promise` with `fs-extra`
+* Dev: Swap ESLint for JSHint
+* Dev: Swap Jest for Mocha+Chai
+* Docs: Versioning policy
+* Docs: Remove Greenkeeper badge
+* Docs: Link to Travis CI with HTTPS
 
-## 1.1.1
+## 1.4.6
 
-* Fix: Correctly handle server not returning `content-length` header
-* Comments typo
+* Fix: Avoid stalling on errors which don't emit end event
+* Fix: Reset backoff after attempt which returned bytes
+* Docs: Update license year
+* Dev: Add `package-lock.json` lock file
+* Dev: Editor config 2 spaces for tabs
+
+## 1.4.5
+
+* Remove `transform` stream from log messages
+
+## 1.4.4
+
+* Fix: Propagate error event to output stream if `transform` option used
+
+## 1.4.3
+
+* Fix: Propagate all stream events to output stream if `transform` option used
+
+## 1.4.2
+
+* Fix: Propagate stream events to output stream if `transform` option used
+
+## 1.4.1
+
+* Fix: Add `cancel` method to output stream if `transform` option used
+
+## 1.4.0
+
+* `transform` option
+* Error message for wrong range more verbose
+* Define all keys on `options`
+* Refactor logging
+* Remove unnecessary code
+* JSDoc comment document all options
+* Tests small refactor
+* `package.json` formatting
+
+## 1.3.2
+
+* Log response body when response errors
+* Update dev dependencies
+
+## 1.3.1
+
+* Fix: Do not require `accept-ranges` header
+* Update dev dependencies
+* Travis CI run tests on Node v10
+
+## 1.3.0
+
+* `toFile` method
+* Fix: Malformed range header reports range
+* Code tidy: Delete `waitTimer` when timer cleared
+* Code comments
+* Update `got` dependency
+* Update dev dependencies
 
 ## 1.2.0
 
@@ -39,97 +111,25 @@
 * Code tidy
 * Tests
 
-## 1.3.0
+## 1.1.1
 
-* `toFile` method
-* Fix: Malformed range header reports range
-* Code tidy: Delete `waitTimer` when timer cleared
-* Code comments
-* Update `got` dependency
-* Update dev dependencies
+* Fix: Correctly handle server not returning `content-length` header
+* Comments typo
 
-## 1.3.1
+## 1.1.0
 
-* Fix: Do not require `accept-ranges` header
-* Update dev dependencies
-* Travis CI run tests on Node v10
+* Cancellation
+* `PreError` class for errors in `pre` function
 
-## 1.3.2
+## 1.0.2
 
-* Log response body when response errors
-* Update dev dependencies
+* Fix: Do not stream data after protocol error (closes #3)
+* README Greenkeeper.io badge
 
-## 1.4.0
+## 1.0.1
 
-* `transform` option
-* Error message for wrong range more verbose
-* Define all keys on `options`
-* Refactor logging
-* Remove unnecessary code
-* JSDoc comment document all options
-* Tests small refactor
-* `package.json` formatting
+* README update
 
-## 1.4.1
+## 1.0.0
 
-* Fix: Add `cancel` method to output stream if `transform` option used
-
-## 1.4.2
-
-* Fix: Propagate stream events to output stream if `transform` option used
-
-## 1.4.3
-
-* Fix: Propagate all stream events to output stream if `transform` option used
-
-## 1.4.4
-
-* Fix: Propagate error event to output stream if `transform` option used
-
-## 1.4.5
-
-* Remove `transform` stream from log messages
-
-## 1.4.6
-
-* Fix: Avoid stalling on errors which don't emit end event
-* Fix: Reset backoff after attempt which returned bytes
-* Docs: Update license year
-* Dev: Add `package-lock.json` lock file
-* Dev: Editor config 2 spaces for tabs
-
-## 2.0.0
-
-* `timeout` option [major]
-* Drop support for Node v6 + v8 [major]
-* Idle timeout [feat]
-* Code style [refactor]
-* Entry point file [refactor]
-* Line spacing [nocode]
-* Tests: Replace `fs-extra-promise` with `fs-extra`
-* Dev: Swap ESLint for JSHint
-* Dev: Swap Jest for Mocha+Chai
-* Docs: Versioning policy
-* Docs: Remove Greenkeeper badge
-* Docs: Link to Travis CI with HTTPS
-
-## 2.0.1
-
-* Clear idle timeout on error [fix]
-* Do not pass idle timeout to `got` [fix]
-* Log idle timeouts [improve]
-
-## 2.0.2
-
-* Deps: Update `got` dependency
-* Fix idle timeout [fix]
-* Calculate backoff correctly [fix]
-* Only fire `request` event once [fix]
-* Don't use deprecated `req._headers` [fix]
-* Avoid deleting object properties [perf]
-* Tests: Split into multiple files [refactor]
-
-## 2.0.3
-
-* Prevent default timeout interrupting actively downloading chunks [fix]
-* Shorten var reference [refactor]
+* Initial release
