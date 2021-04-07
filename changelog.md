@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.0.5
+
+* Use `res.complete` where no `length` provided [fix]
+* Transfer class consistent use of `this` [refactor]
+
 ## 2.0.4
 
 * Deps: Update `got` dependency
