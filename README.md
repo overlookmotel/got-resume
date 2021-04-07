@@ -86,7 +86,7 @@ function backoff(attempt) {
 
 Length of response expected in bytes. If undefined, `length` will be determined from HTTP `content-length` header.
 
-If server does not provide `content-length` header, and `options.length` is not set, transfer will be considered complete when first successful request completes.
+If server does not provide `content-length` header, and `options.length` is not set, transfer will be considered complete when first successful response completes.
 
 If `options.length` is set, only that number of bytes will be fetched (i.e. file will be truncated).
 
