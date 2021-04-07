@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.0.4
+
+* Deps: Update `got` dependency
+* Dev: Update dev dependencies
+* Dev: Use Github Actions for CI
+* Docs: Update license year
+* Docs: Reverse order of Changelog
+
 ## 2.0.3
 
 * Prevent default timeout interrupting actively downloading chunks [fix]
