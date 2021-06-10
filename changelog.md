@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.6
+
+* Log response timings on chunk error [improve]
+
 ## 2.0.5
 
 * Use `res.complete` where no `length` provided [fix]
