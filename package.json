@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "bluebird": "^2.11.0",
-    "got": "^11.8.2",
+    "got": "^12.5.2",
     "pump": "^3.0.0"
   },
   "devDependencies": {
