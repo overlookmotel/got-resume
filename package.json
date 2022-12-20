@@ -53,7 +53,7 @@
     "cover-main": "cross-env COVERAGE=true jest --coverage"
   },
   "engines": {
-    "node": ">=10"
+    "node": ">=14"
   },
   "readmeFilename": "README.md",
   "license": "MIT"
