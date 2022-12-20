@@ -102,6 +102,12 @@ Set to true if you require the length of the transfer to be retrieved at start o
 
 Explanation: By default got will use transfer encoding (e.g. gzip). This makes the `content-length` HTTP header unreliable. Setting `options.needLength` disables encoding so length should be retrieved accurately (if server provides it).
 
+#### ignoreLastMod
+
+If `false` (default behavior), will verify that last modified time reported by server is the same across all chunk requests. Transfer will fail on a mismatch.
+
+Set to `true` to ignore last modified times. This can be useful where last modified times reported by server are inaccurate.
+
 #### timeout
 
 Timeout in milliseconds. Default is 5000 (5 seconds).
