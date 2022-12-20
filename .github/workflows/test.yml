@@ -6,17 +6,12 @@ on:
 jobs:
   lint:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [18]
-
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
+    - name: Use Node.js 18
+      uses: actions/setup-node@v2
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: 18
     - name: Cache NPM
       uses: actions/cache@v2
       with:
@@ -36,7 +31,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
     - name: Cache NPM
@@ -45,22 +40,18 @@ jobs:
         path: ~/.npm
         key: ${{ runner.OS }}-npm-${{ hashFiles('**/package-lock.json') }}
         restore-keys: ${{ runner.os }}-npm-
+    - run: npm i -g npm@latest
     - run: npm ci
     - run: npm run test-main
 
   coverage:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [18]
-
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
+    - name: Use Node.js 18
+      uses: actions/setup-node@v2
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: 18
     - name: Cache NPM
       uses: actions/cache@v2
       with:
@@ -70,6 +61,6 @@ jobs:
     - run: npm ci
     - run: npm run cover-main
     - name: Send report to Coveralls
-      uses: coverallsapp/github-action@v1.1.1
+      uses: coverallsapp/github-action@v1.1.2
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
