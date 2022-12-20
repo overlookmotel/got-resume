@@ -11,5 +11,10 @@ module.exports = {
 	extends: [
 		'@overlookmotel/eslint-config',
 		'@overlookmotel/eslint-config-node'
-	]
+	],
+	settings: {
+		jsdoc: {
+			preferredTypes: {Stream: 'Stream'}
+		}
+	}
 };
