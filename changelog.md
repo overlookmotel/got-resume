@@ -1,5 +1,34 @@
 # Changelog
 
+## 2.1.0
+
+Features:
+
+* `ignoreLastMod` option
+
+Minor:
+
+* Drop support for Node v10, v12, v15
+
+Dependencies:
+
+* Update `got` dependency
+
+Dev:
+
+* Use NPM v8 for development
+* Run tests on CI on Node v16, v18, v19
+* Clean up after `cover` NPM script even if fails
+* Update Github Actions scripts
+* Update dev dependencies
+
+Docs:
+
+* Fix Github Actions badge [fix]
+* Remove David badges from README
+* Update license year
+* Remove license indentation
+
 ## 2.0.6
 
 * Log response timings on chunk error [improve]
