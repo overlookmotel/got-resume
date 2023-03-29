@@ -49,7 +49,7 @@ describe('Idle timeout', () => {
 				res.setHeader('content-length', resLen);
 				res.write(resTxt.slice(0, chunkSize));
 			} else {
-				const rangeStart = range.match(/^bytes=(\d+)-$/)[1] * 1;
+				const rangeStart = range.match(/^bytes=(\d+)-(\d+)$/)[1] * 1;
 				res.setHeader('accept-ranges', 'bytes');
 				res.setHeader('content-length', resLen - rangeStart);
 				res.setHeader('content-range', `bytes ${rangeStart}-${resLen - 1}/${resLen}`);
