@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.1.1
+
+Improvements:
+
+* Request range if `options.length` provided
+
+Dev:
+
+* Run tests on all CPU cores on CI
+* Run ESLint in parallel
+* Update dev dependencies
+
 ## 2.1.0
 
 Features:
