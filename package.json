@@ -55,7 +55,7 @@
     "cover-cleanup": "rm -rf coverage"
   },
   "engines": {
-    "node": ">=14"
+    "node": ">=16"
   },
   "readmeFilename": "README.md",
   "license": "MIT"
