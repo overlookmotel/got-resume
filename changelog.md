@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.2.1
+
+Bug fixes:
+
+* Get correct length when using `offset` option
+
 ## 2.2.0
 
 Bug fixes:
