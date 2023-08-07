@@ -1,5 +1,21 @@
 # Changelog
 
+## 2.2.0
+
+Bug fixes:
+
+* Support servers which don't return range header on first request
+* Get correct length when using `offset` option
+
+Minor:
+
+* Drop support for Node v14, v19
+
+Dev:
+
+* Run tests on CI on Node v20
+* Update dev dependencies
+
 ## 2.1.1
 
 Improvements:
