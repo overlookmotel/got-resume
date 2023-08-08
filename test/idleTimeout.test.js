@@ -13,7 +13,7 @@ const {Server} = require('http'),
 const {streamToString} = require('./support/index.js');
 
 // Constants
-const PORT = 5000,
+const PORT = 6000,
 	URL = `http://localhost:${PORT}/foo.txt`;
 
 // Init
