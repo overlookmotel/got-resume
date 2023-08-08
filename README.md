@@ -1,12 +1,8 @@
-# got-resume.js
-
-# Fetch via HTTP/HTTPS using got with automatic resume after network failures
-
-## Current status
-
 [![NPM version](https://img.shields.io/npm/v/got-resume.svg)](https://www.npmjs.com/package/got-resume)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/overlookmotel/got-resume/test.yml?branch=master)](https://github.com/overlookmotel/got-resume/actions)
 [![Coverage Status](https://img.shields.io/coveralls/overlookmotel/got-resume/master.svg)](https://coveralls.io/r/overlookmotel/got-resume)
+
+# Fetch via HTTP/HTTPS using got with automatic resume after network failures
 
 ## Usage
 
