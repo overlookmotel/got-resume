@@ -8,52 +8,26 @@
 // Modules
 const gotResume = require('got-resume');
 
-// Constants
-const URL_PREFIX = 'https://raw.githubusercontent.com/overlookmotel/got-resume/master/test/files/';
-
-// Init
-require('./support/index.js');
+// Imports
+const {streamToString, URL_PREFIX} = require('./support/index.js');
 
 // Tests
 
 describe('`gotResume()`', () => {
 	describe('streams', () => {
 		it('empty file', async () => {
-			const stream = gotResume(`${URL_PREFIX}empty.txt`);
-
-			await new Promise((resolve, reject) => {
-				let count = 0;
-				stream.on('data', () => count++);
-				stream.on('end', () => {
-					try {
-						expect(count).toBe(0);
-						resolve();
-					} catch (e) {
-						reject(e);
-					}
-				});
-				stream.on('error', reject);
-			});
+			const txt = await get('empty.txt');
+			expect(txt).toBe('');
 		});
 
 		it('short file', async () => {
-			const stream = gotResume(`${URL_PREFIX}short.txt`);
-
-			await new Promise((resolve, reject) => {
-				let out = '';
-				stream.on('data', (data) => {
-					out += data.toString();
-				});
-				stream.on('end', () => {
-					try {
-						expect(out).toBe('ABCDEFGHIJKLMNOPQRSTUVWXYZ');
-						resolve();
-					} catch (e) {
-						reject(e);
-					}
-				});
-				stream.on('error', reject);
-			});
+			const txt = await get('short.txt');
+			expect(txt).toBe('ABCDEFGHIJKLMNOPQRSTUVWXYZ');
 		});
 	});
 });
+
+function get(filename, options) {
+	const stream = gotResume(`${URL_PREFIX}${filename}`, options);
+	return streamToString(stream);
+}

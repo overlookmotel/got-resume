@@ -9,13 +9,14 @@
 const {Server} = require('http'),
 	gotResume = require('got-resume');
 
+// Imports
+const {streamToString} = require('./support/index.js');
+
 // Constants
 const PORT = 5000,
 	URL = `http://localhost:${PORT}/foo.txt`;
 
 // Init
-require('./support/index.js');
-
 jest.setTimeout(10000);
 
 // Tests
@@ -63,21 +64,7 @@ describe('Idle timeout', () => {
 		};
 
 		const stream = gotResume(URL, {timeout: {idle: 100}});
-
-		await new Promise((resolve, reject) => {
-			let out = '';
-			stream.on('data', (data) => {
-				out += data.toString();
-			});
-			stream.on('end', () => {
-				try {
-					expect(out).toBe(resTxt);
-					resolve();
-				} catch (e) {
-					reject(e);
-				}
-			});
-			stream.on('error', reject);
-		});
+		const txt = await streamToString(stream);
+		expect(txt).toBe(resTxt);
 	});
 });
