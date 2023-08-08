@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.2.2
+
+Bug fixes:
+
+* Fix use of `length` + `offset` options
+* Disable compression
+
+Tests:
+
+* Change port for idle timeout test
+* Refactor tests
+
 ## 2.2.1
 
 Bug fixes:

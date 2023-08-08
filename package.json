@@ -1,6 +1,6 @@
 {
   "name": "got-resume",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "Fetch via HTTP/HTTPS using got with automatic resume after network failures",
   "main": "index.js",
   "exports": {
